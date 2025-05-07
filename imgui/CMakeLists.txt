@@ -10,6 +10,7 @@ file(
 )
 
 add_library(imgui STATIC ${SOURCES})
+add_library(imgui::imgui ALIAS imgui)
 
 target_include_directories(imgui SYSTEM PUBLIC "include")
 

@@ -10,12 +10,13 @@ file(
 )
 
 add_library(imgui-backend-sdl3 STATIC ${SOURCES})
+add_library(imgui::imgui-sdl3 ALIAS imgui-backend-sdl3)
 
 target_include_directories(imgui-backend-sdl3 SYSTEM PUBLIC "include")
 
 target_link_libraries(imgui-backend-sdl3 PRIVATE imgui)
 
-find_package(SDL3 REQUIRED CONFIG REQUIRED COMPONENTS SDL3-shared)
+find_package(SDL3 REQUIRED CONFIG COMPONENTS SDL3-shared)
 target_link_libraries(imgui-backend-sdl3 PRIVATE SDL3::SDL3)
 
 set_target_properties(imgui-backend-sdl3
