@@ -16,7 +16,7 @@ target_include_directories(imgui-backend-sdl3 SYSTEM PUBLIC "include")
 
 target_link_libraries(imgui-backend-sdl3 PRIVATE imgui)
 
-find_package(SDL3 REQUIRED CONFIG COMPONENTS SDL3-shared)
+find_package(SDL3 REQUIRED CONFIG)
 target_link_libraries(imgui-backend-sdl3 PRIVATE SDL3::SDL3)
 
 set_target_properties(imgui-backend-sdl3
